@@ -50,7 +50,7 @@ flutter:
   assets:
     - assets/images/login_image.png
     - assets/images/hey.png
-    
+    - assets/files/catalog.json
     
   #   - images/a_dot_ham.jpeg
 

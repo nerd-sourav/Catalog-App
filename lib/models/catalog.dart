@@ -1,3 +1,16 @@
+class CatalogModal {
+  static final items = [
+    Item(
+        id: '001',
+        name: 'iPhone 12 Pro Max',
+        desc: 'iPhone 12th Generation',
+        price: 1299,
+        color: '#33505a',
+        imageUrl:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRISJ6msIu4AU9_M9ZnJVQVFmfuhfyJjEtbUm3ZK11_8IV9TV25-1uM5wHjiFNwKy99w0mR5Hk&usqp=CAc"),
+  ];
+}
+
 class Item {
   final String id;
   final String name;
@@ -15,15 +28,3 @@ class Item {
     this.imageUrl,
   });
 }
-
-final products = [
-  Item(
-    id: '001',
-    name: 'iPhone 12 Pro Max',
-    desc: 'iPhone 12th Generation',
-    price: 1299,
-    color: '#33505a',
-    imageUrl:
-        'https://www.citypng.com/public/uploads/preview/-115985227019opakxsfzx.png',
-  )
-];
