@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:eighthours/models/catalog.dart';
 import 'package:eighthours/widgets/drawer.dart';
 import 'package:eighthours/widgets/item_widget.dart';
@@ -12,7 +11,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final dummmyList = List.generate(20, (index) => CatalogModal.items[0]);
   @override
   void initState() {
     super.initState();
@@ -20,10 +18,13 @@ class _HomePageState extends State<HomePage> {
   }
 
   loadData() async {
+    await Future.delayed(Duration(seconds: 3));
     final catlogJson = await rootBundle.loadString('assets/files/catalog.json');
     final decodedJson = jsonDecode(catlogJson);
     var productData = decodedJson["products"];
-    print(productData);
+    CatalogModal.items =
+        List.from(productData).map<Item>((item) => Item.fromMap(item)).toList();
+    setState(() {});
   }
 
   @override
@@ -33,11 +34,18 @@ class _HomePageState extends State<HomePage> {
         title: Text("Catalog App"),
       ),
       drawer: MyDrawer(),
-      body: ListView.builder(
-        itemCount: dummmyList.length,
-        itemBuilder: (context, index) {
-          return ItemWidget(item: dummmyList[index]);
-        },
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: (CatalogModal.items != null && CatalogModal.items.isNotEmpty)
+            ? ListView.builder(
+                itemCount: CatalogModal.items.length,
+                itemBuilder: (context, index) {
+                  return ItemWidget(item: CatalogModal.items[index]);
+                },
+              )
+            : Center(
+                child: CircularProgressIndicator(),
+              ),
       ),
     );
   }

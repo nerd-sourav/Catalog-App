@@ -1,4 +1,3 @@
-import 'package:eighthours/pages/home_page.dart';
 import 'package:eighthours/utils/routes.dart';
 import 'package:flutter/material.dart';
 
