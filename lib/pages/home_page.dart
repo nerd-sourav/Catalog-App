@@ -40,14 +40,40 @@ class _HomePageState extends State<HomePage> {
             ? GridView.builder(
                 itemCount: CatalogModal.items.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2),
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 16.0,
+                  crossAxisSpacing: 16.0,
+                ),
                 itemBuilder: (BuildContext context, index) {
                   final item = CatalogModal.items[index];
                   return Card(
-                      clipBehavior: Clip.antiAlias,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                      child: GridTile(child: Image.network(item.image)));
+                    clipBehavior: Clip.antiAlias,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    child: GridTile(
+                      child: Image.network(item.image),
+                      header: Container(
+                        child: Text(
+                          item.name,
+                          style: TextStyle(
+                              fontWeight: FontWeight.w700, fontSize: 20.0),
+                        ),
+                        padding: EdgeInsets.all(12),
+                        decoration: BoxDecoration(color: Colors.deepPurple),
+                      ),
+                      footer: Container(
+                        child: Text(
+                          item.price.toString(),
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 20.0),
+                        ),
+                        padding: EdgeInsets.all(12),
+                        decoration: BoxDecoration(color: Colors.black),
+                      ),
+                    ),
+                  );
                 })
             : Center(
                 child: CircularProgressIndicator(),
