@@ -37,12 +37,18 @@ class _HomePageState extends State<HomePage> {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: (CatalogModal.items != null && CatalogModal.items.isNotEmpty)
-            ? ListView.builder(
+            ? GridView.builder(
                 itemCount: CatalogModal.items.length,
-                itemBuilder: (context, index) {
-                  return ItemWidget(item: CatalogModal.items[index]);
-                },
-              )
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2),
+                itemBuilder: (BuildContext context, index) {
+                  final item = CatalogModal.items[index];
+                  return Card(
+                      clipBehavior: Clip.antiAlias,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                      child: GridTile(child: Image.network(item.image)));
+                })
             : Center(
                 child: CircularProgressIndicator(),
               ),
@@ -50,3 +56,10 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
+
+// ListView.builder(
+//                 itemCount: CatalogModal.items.length,
+//                 itemBuilder: (context, index) {
+//                   return ItemWidget(item: CatalogModal.items[index]);
+//                 },
