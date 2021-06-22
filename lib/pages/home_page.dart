@@ -82,10 +82,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-
-// ListView.builder(
-//                 itemCount: CatalogModal.items.length,
-//                 itemBuilder: (context, index) {
-//                   return ItemWidget(item: CatalogModal.items[index]);
-//                 },
