@@ -5,10 +5,9 @@ Welcome to the Catalog App repository! This Flutter project showcases a catalog 
 ## Screenshots
 
 <p align="center">
-  <img src="https://github.com/nerd-sourav/Catalog-App/assets/72149259/67d04eaf-bdd6-466c-9b93-aef936cf4f60" alt="Screenshot 1" width="250">
   <img src="https://github.com/nerd-sourav/Catalog-App/assets/72149259/bda3f3fb-53cf-4d33-aec8-d8013a2551eb" alt="Screenshot 2" width="250">
+  <img src="https://github.com/nerd-sourav/Catalog-App/assets/72149259/d76d037d-6a1a-4b00-b80d-5fde07ad5829" alt="Screenshot 2" width="250">
   <img src="https://github.com/nerd-sourav/Catalog-App/assets/72149259/00fd16d6-9d40-4ef0-84fb-adcc6a458550" alt="Screenshot 3" width="250">
-  <img src="https://github.com/nerd-sourav/Catalog-App/assets/72149259/4b61b57d-920e-488c-bd65-7c46124a290b" alt="Screenshot 4" width="250">
   <img src="https://github.com/nerd-sourav/Catalog-App/assets/72149259/5101df0c-a8e5-45d8-b653-478779e61f67" alt="Screenshot 5" width="250">
 </p>
 
